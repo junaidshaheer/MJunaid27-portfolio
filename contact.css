@@ -1,0 +1,575 @@
+html {
+    height: 100%;
+    overflow-x: hidden;
+    
+  }
+  
+ 
+main{
+  height: 100vh;
+  width: 100%;
+}
+
+body {
+  background-color: #1a1a1a;
+  
+}
+a
+ {
+   text-decoration: none;
+   color: black;
+   left: 0;
+   right: 0;
+   
+   font-size: 20px;
+   display: flex;
+   margin-left: auto;
+   margin-right: auto;
+  width: 12em; 
+  transform: translate3d(0, -100%, 0);
+  animation: slideIn 0.3s ease-in;
+  transition: all 0.5s ease-out;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+    transition-delay: 0s;
+ }
+ 
+ .overlay li {
+  animation: FadeIn 1s ease;
+  animation-fill-mode: both;
+  width: 12em;
+  line-height: 400%;
+}
+
+
+  
+
+
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(.1);
+  }
+  85% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+ a:hover
+ {
+   color: white;
+   text-decoration: none; 
+ }
+a:focus {
+  outline-color: black;
+}
+ #menuToggle
+ {
+   display: block;
+   position: absolute;
+   top: 50px;
+   right: 50px;
+   z-index: 1;
+   
+   -webkit-user-select: none;
+   -moz-user-select: none;
+    -ms-user-select: none;
+        user-select: none;
+ }
+ #menuToggle input
+ {
+   display: block;
+   width: 40px;
+   height: 32px;
+   position: absolute;
+   top: -7px;
+   left: -5px;
+   
+   cursor: pointer;
+   
+   opacity: 0; /* hide this */
+   z-index: 2; /* and place it over the hamburger */
+   
+   -webkit-touch-callout: none;
+ }
+ 
+ /*
+  * Just a quick hamburger
+  */
+ #menuToggle span
+ {
+   display: block;
+   width: 33px;
+   height: 4px;
+   margin-bottom: 5px;
+   position: relative;
+   
+   background: white;
+   border-radius: 3px;
+   
+   z-index: 1;
+   
+   -webkit-transform-origin: 4px 0px;
+   
+           transform-origin: 4px 0px;
+   
+   -webkit-transition: background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               opacity 0.55s ease,
+               -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+   
+   transition: background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               opacity 0.55s ease,
+               -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+   
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               opacity 0.55s ease;
+   
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               opacity 0.55s ease,
+               -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+ }
+ #menuToggle span:first-child
+ {
+   -webkit-transform-origin: 0% 0%;
+           transform-origin: 0% 0%;
+ }
+ #menuToggle span:nth-last-child(2)
+ {
+   -webkit-transform-origin: 0% 100%;
+           transform-origin: 0% 100%;
+ }
+ /* 
+  * Transform all the slices of hamburger
+  * into a crossmark.
+  */
+ #menuToggle input:checked ~ span
+ {
+   opacity: 1;
+   -webkit-transform: rotate(45deg) translate(-2px, -1px);
+           transform: rotate(45deg) translate(-2px, -1px);
+   background: black; 
+ }
+
+ /*
+  * But let's hide the middle one.
+  */
+ #menuToggle input:checked ~ span:nth-last-child(3)
+ {
+   opacity: 0;
+   -webkit-transform: rotate(0deg) scale(0.2, 0.2);
+           transform: rotate(0deg) scale(0.2, 0.2);
+ }
+ 
+ /*
+  * Ohyeah and the last one should go the other direction
+  */
+ #menuToggle input:checked ~ span:nth-last-child(2)
+ {
+   opacity: 1;
+   -webkit-transform: rotate(-45deg) translate(0, -1px);
+           transform: rotate(-45deg) translate(0, -1px);
+ }
+ 
+ /*
+  * Make this absolute positioned
+  * at the top left of the screen
+  */
+ #menu
+ {
+   position: fixed;
+   width: 525px;
+   margin: -100px 0 0 0;
+   
+   padding-top: 150px;
+   right: -100px;
+   height: 100em;
+  align-items:center;
+  
+   background: #f2aa4cff;
+   list-style-type: none;
+   -webkit-font-smoothing: antialiased;
+   
+   /* to stop flickering of text in safari */
+   
+   -webkit-transform-origin: 0% 0%;
+   
+           transform-origin: 0% 0%;
+   -webkit-transform: translate(100%, 0);
+           transform: translate(100%, 0);
+           transform: translate3d(0, -100%, 0);
+    transition:  0.5s ease-out;
+   
+   -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+   
+   transition: -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+   
+   
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+   
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+ }
+
+ /*
+  * And let's fade it in from the left
+  */
+ #menuToggle input:checked ~ ul
+ {
+   -webkit-transform: scale(1.0, 1.0);
+           transform: scale(1.0, 1.0);
+   opacity: 1;
+ }
+ .details{
+    position: relative;
+    left: 20%;
+    top: 90%;
+    margin-top: 150px;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300; 
+    font-size: 50px;
+    transform: translate(-20%, -20%); 
+}
+span{
+  color: #f2aa4cff;
+}
+h1,h3{
+    color: white;
+}
+
+
+
+.btn,
+.btn:focus {
+color: #fff;
+
+margin: 20px auto;
+font-weight: 500;
+display: table;
+padding: 30px;
+border: 2px solid #f2aa4cff; ;
+margin-left:50%;
+border-radius: 0;
+
+}
+
+.btn:hover,
+.btn:focus {
+color: #f2aa4cff;;
+background-color: transparent;
+border: 1px solid #f2aa4cff;;
+}
+
+.hr-h3s {
+border: 3px solid #E94B3C;
+width: 70px;
+margin: 0 auto 35px auto;
+}
+
+
+textarea {
+resize: none;
+}
+
+section {
+align-items: center;
+padding: 50px 60px;	
+}
+
+.bg-section h2 {
+font-family: 'Leckerli One', cursive;
+text-transform: none;
+margin: 50px 0;
+padding: 25px 20px;
+border-radius: 50px;
+}
+
+
+
+@keyframes slide {
+0% {
+  opacity: 0;
+  transform: translateX(50%);
+}
+
+100% {
+  opacity: 1;
+  transform: translateX(0%);
+}
+}
+
+@-webkit-keyframes slide {
+0% {
+  opacity: 0;
+  -webkit-transform: translateX(50%);
+  transform: translateX(50%);
+}
+
+100% {
+  opacity: 1;
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
+}
+}
+
+
+/* ******* Contact ******* */
+
+#contact .form-group input, 
+#contact .form-group textarea {
+border: 1px solid #000;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+#contact .form-group input:hover,
+#contact .form-group textarea:hover {
+border-color: orangered;
+box-shadow: 2px 2px 2px #f2aa4cff;
+
+
+}
+
+#contact .contact-buttons input, 
+#contact .contact-buttons input:focus {
+color: black;
+background-color: #f2aa4cff;;
+margin: 20px auto 40px auto;
+border-radius: 0;
+font-weight: 500;
+padding: 10px;
+border: 1px solid #f2aa4cff;s;
+cursor: pointer;
+font-family: Arial, Helvetica, sans-serif;
+
+}
+
+#contact .contact-buttons input:hover {
+color: #f2aa4cff;;
+background-color: black;
+
+
+}
+
+
+.form-control{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+.social-icon {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+    width: 50px;
+    height: 50px;
+    padding: 0px;
+    text-decoration: none;
+    text-align: left;
+    color: black;
+    font-size: 25px;
+    font-weight: normal;
+    line-height: 3em;
+    float: left;
+}
+
+
+.social-icons a {
+  color: black;
+  text-decoration: none;
+  text-align: left;
+ 
+}
+
+
+.fa-linkedin {
+  padding:5px 10px;
+  
+}
+.fa-linkedin:hover {
+  background-color: #007bb6;
+}
+
+
+.fa-instagram {
+  padding:5px 10px;
+ 
+  
+}
+.fa-instagram:hover {
+  background-color: #E1306C
+}
+
+.fa-facebook {
+  padding:5px 10px;
+ 
+  
+  
+}
+.fa-facebook:hover {
+  background-color: #3b5998;;
+}
+.fa-twitter {
+  padding:5px 10px;
+ 
+  
+  
+ 
+}
+.fa-twitter:hover {
+  background-color: #00aced;
+}
+
+
+
+
+
+
+.fa-github {
+  padding:5px 10px;
+ 
+  
+}
+.fa-github:hover {
+  background-color: black;
+}
+
+
+
+
+#social {
+  margin-left: 10px 10px;
+  text-align: center;
+}
+
+
+
+.contact__container {
+ display: block;
+
+ 
+  max-width: max-content;
+height: 300px;
+  background-color: #f2aa4cff;;
+}
+
+.span-contact{
+  
+    
+    text-transform: none;
+   
+    font-weight: 500;
+    font-size: 1em;
+    color: black;
+   
+    font-family: Arial, Helvetica, sans-serif;
+    }
+
+.contact__form{
+  max-width: max-content;
+}
+.contact{
+  width: 320px;
+  margin-left: 5px;
+}
+.mail{
+  visibility: visible;
+font-size: 1em;
+padding-left: 20px;
+}
+
+
+
+
+.footer-copyright{
+  color: white;
+}
+@media screen and (max-width: 768px){
+
+  section{
+    width: 100%;
+  }
+  .container{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .details h1{
+    margin-left: 35px;
+  }
+  .details h3{
+  margin-left: 35px;
+  font-size: 20px;
+  }
+
+a{
+  color: white;
+}
+
+
+  a:hover{
+ 
+   color: #f2aa4cff;
+ }
+     
+     .overlay li {
+      animation: FadeIn 1s ease;
+      animation-fill-mode: both;
+      width: 40em;
+    }
+    #menu{
+      background: black;
+     
+    }
+   
+    #menuToggle input:checked ~ span
+ {
+ 
+   background: white; 
+  }
+  .container-fluid{
+    width: fit-content;
+  }
+  
+
+  
+  #contact .left-box {
+    
+  
+   box-sizing: border-box;
+   
+   
+   height: fit-content;
+   
+  }
+  .contact{
+    width: 270px;
+    margin-left: 5px;
+  }
+
+    .mail{
+      visibility: visible;
+   font-size: 0.8em;
+  
+    }
+    .social-icon {
+      display: block;
+}
+.contact-buttons{
+  margin-left: 50px;
+}
+.sr-only{
+  font-family: Arial, Helvetica, sans-serif;
+}
+}
+

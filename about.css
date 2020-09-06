@@ -1,0 +1,422 @@
+html {
+    height: 100%;
+    overflow-x: hidden;
+  }
+  
+ 
+main{
+  height: 100vh;
+  width: 100%;
+}
+
+body {
+	background-color: #1a1a1a;
+}
+a
+ {
+   text-decoration: none;
+   color: black;
+   left: 0;
+   right: 0;
+   
+   font-size: 20px;
+   display: flex;
+   margin-left: auto;
+   margin-right: auto;
+  width: 12em; 
+  transform: translate3d(0, -100%, 0);
+  animation: slideIn 0.3s ease-in;
+  transition: all 0.5s ease-out;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+    transition-delay: 0s;
+ }
+ 
+ .overlay li {
+  animation: FadeIn 1s ease;
+  animation-fill-mode: both;
+  width: 12em;
+  line-height: 400%
+}
+
+
+  
+
+
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(.1);
+  }
+  85% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+ a:hover
+ {
+   color: white;
+   text-decoration: none; 
+ }
+a:focus {
+  outline-color: black;
+}
+ #menuToggle
+ {
+   display: block;
+   position: absolute;
+   top: 50px;
+   right: 50px;
+   z-index: 1;
+   
+   -webkit-user-select: none;
+   -moz-user-select: none;
+    -ms-user-select: none;
+        user-select: none;
+ }
+ #menuToggle input
+ {
+   display: block;
+   width: 40px;
+   height: 32px;
+   position: absolute;
+   top: -7px;
+   left: -5px;
+   
+   cursor: pointer;
+   
+   opacity: 0; /* hide this */
+   z-index: 2; /* and place it over the hamburger */
+   
+   -webkit-touch-callout: none;
+ }
+ 
+ /*
+  * Just a quick hamburger
+  */
+ #menuToggle span
+ {
+   display: block;
+   width: 33px;
+   height: 4px;
+   margin-bottom: 5px;
+   position: relative;
+   
+   background: white;
+   border-radius: 3px;
+   
+   z-index: 1;
+   
+   -webkit-transform-origin: 4px 0px;
+   
+           transform-origin: 4px 0px;
+   
+   -webkit-transition: background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               opacity 0.55s ease,
+               -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+   
+   transition: background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               opacity 0.55s ease,
+               -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+   
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               opacity 0.55s ease;
+   
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               opacity 0.55s ease,
+               -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+ }
+ #menuToggle span:first-child
+ {
+   -webkit-transform-origin: 0% 0%;
+           transform-origin: 0% 0%;
+ }
+ #menuToggle span:nth-last-child(2)
+ {
+   -webkit-transform-origin: 0% 100%;
+           transform-origin: 0% 100%;
+ }
+ /* 
+  * Transform all the slices of hamburger
+  * into a crossmark.
+  */
+ #menuToggle input:checked ~ span
+ {
+   opacity: 1;
+   -webkit-transform: rotate(45deg) translate(-2px, -1px);
+           transform: rotate(45deg) translate(-2px, -1px);
+   background: black; 
+ }
+
+ /*
+  * But let's hide the middle one.
+  */
+ #menuToggle input:checked ~ span:nth-last-child(3)
+ {
+   opacity: 0;
+   -webkit-transform: rotate(0deg) scale(0.2, 0.2);
+           transform: rotate(0deg) scale(0.2, 0.2);
+ }
+ 
+ /*
+  * Ohyeah and the last one should go the other direction
+  */
+ #menuToggle input:checked ~ span:nth-last-child(2)
+ {
+   opacity: 1;
+   -webkit-transform: rotate(-45deg) translate(0, -1px);
+           transform: rotate(-45deg) translate(0, -1px);
+ }
+ 
+ /*
+  * Make this absolute positioned
+  * at the top left of the screen
+  */
+ #menu
+ {
+   position: fixed;
+   width: 525px;
+   margin: -100px 0 0 0;
+   
+   padding-top: 150px;
+   right: -100px;
+   height: 100em;
+  align-items:center;
+  
+   background: #f2aa4cff;
+   list-style-type: none;
+   -webkit-font-smoothing: antialiased;
+   
+   /* to stop flickering of text in safari */
+   
+   -webkit-transform-origin: 0% 0%;
+   
+           transform-origin: 0% 0%;
+   -webkit-transform: translate(100%, 0);
+           transform: translate(100%, 0);
+           transform: translate3d(0, -100%, 0);
+    transition:  0.5s ease-out;
+   
+   -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+   
+   transition: -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+   
+   
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+   
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+ }
+ /*
+  * And let's fade it in from the left
+  */
+ #menuToggle input:checked ~ ul
+ {
+   -webkit-transform: scale(1.0, 1.0);
+           transform: scale(1.0, 1.0);
+   opacity: 1;
+ }
+
+ .details{
+    position: relative;
+    left: 20%;
+    top: 90%;
+    margin-top: 150px;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300; 
+    font-size: 50px;
+    transform: translate(-20%, -20%); 
+}
+span{
+  color: #f2aa4cff;
+}
+img{
+    position: fixed;
+    line-height: 20px;
+    margin-left: 20px;
+}
+h2{
+  text-align: center;
+  color: #f2aa4cff;
+}
+p{
+  margin-left: 200px;
+  align-items: center;
+  text-align: justify;
+  text-justify: inter-word;
+  color: aliceblue;
+}
+ h1,h3{
+  color: aliceblue;
+ }
+.card{
+  height: 16em;
+  
+}
+.card-title{
+  text-align: center;
+}
+ 
+ .footer-copyright{
+   color: white;
+ }
+ 
+ 
+ /* Media Queries
+--------------------------------------------- */
+@media screen and (max-width: 600px){
+
+  .details{
+    position: relative;
+    text-align: center;
+    margin-top: 200px;
+  }
+
+h2,h3{
+  text-align: center;
+}
+a{
+  width: fit-content;
+  text-align: center;
+  color: white;
+}
+  a:hover{
+ 
+   color: #f2aa4cff;
+   width: 100%;
+ }
+     
+     .overlay li {
+      animation: FadeIn 1s ease;
+      animation-fill-mode: both;
+      width: 100%;
+    }
+    #menu{
+      overflow: hidden;
+      background-color: black;
+      width: 100%;
+      position: fixed;
+    }
+    #menuToggle input:checked ~ span
+ {
+   
+   background: white; 
+ }
+ #menuToggle
+ {
+   display: block;
+   position: absolute;
+ }
+}
+
+
+@media screen and (max-width: 786px){ /* smartphone,android phones, lanscape iphone*/
+
+  .container{
+    width: 100%;
+  }
+  .row{
+    width: 100%;
+  }
+  
+a{
+  color: white;
+}
+
+
+  a:hover{
+ 
+   color: #f2aa4cff;
+ }
+     
+     .overlay li {
+      animation: FadeIn 1s ease;
+      animation-fill-mode: both;
+      width: 30em;
+    }
+   
+    
+    #menu{
+      background: black;
+    width: max-content;
+      
+
+    }
+    #menuToggle input:checked ~ span
+ {
+ 
+   background: white; 
+ }
+ .details h1{
+   text-align: center;
+ }
+.details h3{
+margin-left: 15px;
+}
+
+img{
+position: fixed;
+display: flex;
+flex-wrap: wrap;
+margin-left: 100px;
+margin-right: auto;
+}
+h2{
+margin-top: 150px;
+}
+p{
+  margin-left: 15px;
+  padding-top: 35px;
+  align-items: center;
+  text-align: justify;
+  text-justify: inter-word;
+  color: aliceblue;
+}
+
+
+.card{
+  height: 15em;
+  width: 15em;
+}
+.card-title{
+  text-align: center;
+}
+section div{
+  padding: 5px 0; 
+display: block;
+}
+
+
+}
+
+@media (max-width: 576px) {  
+  .xs {color:red;font-weight:bold;}
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width:768px) {  
+  .sm {color:red;font-weight:bold;}
+}
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) and (max-width:992px) {  
+ .md {color:red;font-weight:bold;}
+}
+ 
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width:1200px) { 
+ .lg {color:red;font-weight:bold;}
+}
+ 
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  
+    .xl {color:red;font-weight:bold;}
+}
+ 
+

@@ -1,0 +1,412 @@
+html {
+    height: 100%;
+    overflow-x: hidden;
+  }
+  
+ 
+main{
+  height: 100vh;
+  width: 100%;
+}
+
+body {
+background-color	: #1a1a1a;
+}
+a
+ {
+   text-decoration: none;
+   color: black;
+   left: 0;
+   right: 0;
+   
+   font-size: 20px;
+   display: flex;
+   margin-left: auto;
+   margin-right: auto;
+  width: 12em; 
+  transform: translate3d(0, -100%, 0);
+  animation: slideIn 0.3s ease-in;
+  transition: all 0.5s ease-out;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+    transition-delay: 0s;
+ }
+ 
+ .overlay li {
+  animation: FadeIn 1s ease;
+  animation-fill-mode: both;
+  width: 12em;
+  line-height: 400%
+}
+
+
+  
+
+
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(.1);
+  }
+  85% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+ a:hover
+ {
+   color: white;
+   text-decoration: none; 
+ }
+a:focus {
+  outline-color: black;
+}
+ #menuToggle
+ {
+   display: block;
+   position: absolute;
+   top: 50px;
+   right: 50px;
+   z-index: 1;
+   
+   -webkit-user-select: none;
+   -moz-user-select: none;
+    -ms-user-select: none;
+        user-select: none;
+ }
+ #menuToggle input
+ {
+   display: block;
+   width: 40px;
+   height: 32px;
+   position: absolute;
+   top: -7px;
+   left: -5px;
+   
+   cursor: pointer;
+   
+   opacity: 0; /* hide this */
+   z-index: 2; /* and place it over the hamburger */
+   
+   -webkit-touch-callout: none;
+ }
+ 
+ /*
+  * Just a quick hamburger
+  */
+ #menuToggle span
+ {
+   display: block;
+   width: 33px;
+   height: 4px;
+   margin-bottom: 5px;
+   position: relative;
+   
+   background: white;
+   border-radius: 3px;
+   
+   z-index: 1;
+   
+   -webkit-transform-origin: 4px 0px;
+   
+           transform-origin: 4px 0px;
+   
+   -webkit-transition: background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               opacity 0.55s ease,
+               -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+   
+   transition: background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               opacity 0.55s ease,
+               -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+   
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               opacity 0.55s ease;
+   
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               opacity 0.55s ease,
+               -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+ }
+ #menuToggle span:first-child
+ {
+   -webkit-transform-origin: 0% 0%;
+           transform-origin: 0% 0%;
+ }
+ #menuToggle span:nth-last-child(2)
+ {
+   -webkit-transform-origin: 0% 100%;
+           transform-origin: 0% 100%;
+ }
+ /* 
+  * Transform all the slices of hamburger
+  * into a crossmark.
+  */
+ #menuToggle input:checked ~ span
+ {
+   opacity: 1;
+   -webkit-transform: rotate(45deg) translate(-2px, -1px);
+           transform: rotate(45deg) translate(-2px, -1px);
+   background: black; 
+ }
+
+ /*
+  * But let's hide the middle one.
+  */
+ #menuToggle input:checked ~ span:nth-last-child(3)
+ {
+   opacity: 0;
+   -webkit-transform: rotate(0deg) scale(0.2, 0.2);
+           transform: rotate(0deg) scale(0.2, 0.2);
+ }
+ 
+ /*
+  * Ohyeah and the last one should go the other direction
+  */
+ #menuToggle input:checked ~ span:nth-last-child(2)
+ {
+   opacity: 1;
+   -webkit-transform: rotate(-45deg) translate(0, -1px);
+           transform: rotate(-45deg) translate(0, -1px);
+ }
+ 
+ /*
+  * Make this absolute positioned
+  * at the top left of the screen
+  */
+ #menu
+ {
+   position: fixed;
+   width: 525px;
+   margin: -100px 0 0 0;
+   
+   padding-top: 150px;
+   right: -100px;
+   height: 100em;
+  align-items:center;
+  
+   background: #f2aa4cff;
+   list-style-type: none;
+   -webkit-font-smoothing: antialiased;
+   
+   /* to stop flickering of text in safari */
+   
+   -webkit-transform-origin: 0% 0%;
+   
+           transform-origin: 0% 0%;
+   -webkit-transform: translate(100%, 0);
+           transform: translate(100%, 0);
+           transform: translate3d(0, -100%, 0);
+    transition:  0.5s ease-out;
+   
+   -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+   
+   transition: -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+   
+   
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+   
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+ }
+
+
+
+ 
+
+ 
+
+ 
+ 
+ /*
+  * And let's fade it in from the left
+  */
+ #menuToggle input:checked ~ ul
+ {
+   -webkit-transform: scale(1.0, 1.0);
+           transform: scale(1.0, 1.0);
+   opacity: 1;
+ }
+
+ .details{
+  position: relative;
+  left: 20%;
+  top: 90%;
+  margin-top: 150px;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 300; 
+  font-size: 50px;
+  transform: translate(-20%, -20%); 
+}
+
+h1,h3{
+  color: white;
+}
+span{
+  color: #f2aa4cff;
+}
+
+
+
+
+
+.progress-title{
+  font-size: 16px;
+  font-weight: 700;
+  color: #f2aa4cff;
+  margin: 0 0 20px;
+}
+.progress{
+  height: 10px;
+  background: #f2aa4cff;
+  border-radius: 0;
+  box-shadow: none;
+  margin-bottom: 30px;
+  overflow: visible;
+}
+.progress .progress-bar{
+  box-shadow: none;
+  position: relative;
+  -webkit-animation: animate-positive 2s;
+  animation: animate-positive 2s;
+}
+.progress .progress-bar:after{
+  content: "";
+  display: block;
+  border: 15px solid transparent;
+  border-bottom: 21px solid transparent;
+  position: absolute;
+  top: -26px;
+  right: -12px;
+}
+.progress .progress-value{
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  position: absolute;
+  top: -40px;
+  right: 0;
+}
+.progress.yellow .progress-bar:after{
+  border-bottom-color: black; 
+}
+.progress.yellow .progress-bar:after{
+  border-bottom-color: black;
+}
+.progress.yellow .progress-bar:after{
+  border-bottom-color: black;
+}
+.progress.yellow .progress-bar:after{
+  border-bottom-color: black;
+}
+
+.progress.yellow .progress-bar:after{
+  border-bottom-color: black;
+}
+.progress.yellow .progress-bar:after{
+  border-bottom-color: black;
+}
+.progress.yellow .progress-bar:after{
+  border-bottom-color: black;
+}
+.progress.yellow .progress-bar:after{
+  border-bottom-color: black;
+}
+.progress.yellow .progress-bar:after{
+  border-bottom-color: black;
+}
+.progress.yellow .progress-bar:after{
+  border-bottom-color: black;
+}
+
+.progress.yellow .progress-bar:after{
+  border-bottom-color: black;
+}
+@-webkit-keyframes animate-positive{
+  0% { width: 0; }
+}
+@keyframes animate-positive{
+  0% { width: 0; }
+}
+ section h1{
+   color: black;
+   text-align: center;
+ }
+
+ 
+ div h5{
+   text-align: center;
+ }
+ .card{
+  height: 20em;
+   width: 15em;
+   
+   
+ }
+ 
+ .footer-copyright{
+  color: white;
+}
+
+/* Media Queries
+--------------------------------------------- */
+@media screen and (max-width: 768px){
+
+  section{
+    width: 100%;
+  }
+  .container{
+    width: 100%;
+  }
+  .details h1{
+    margin-left: 35px;
+  }
+  .details h3{
+  margin-left: 35px;
+  }
+
+a{
+  color: white;
+}
+
+section h1{
+  text-align: center;
+  font-size: 2em;
+}
+  a:hover{
+ 
+   color: #f2aa4cff;
+ }
+     
+     .overlay li {
+      animation: FadeIn 1s ease;
+      animation-fill-mode: both;
+      width: 25em;
+    }
+   
+    #menu{
+      background: black;
+
+    }
+    #menuToggle input:checked ~ span
+ {
+ 
+   background: white; 
+  }
+  .card{
+   height: 20em;
+    width: 15em;
+    
+    
+  }
+  
+  
+  section div{
+    padding: 5px 0; 
+  display: block;
+  }
+}
